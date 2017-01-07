@@ -5,13 +5,13 @@ package com.hakim.dsl.metaprogram
  */
 interface Vehicle {
     int getPrincipal()
-    int getValue();
+    int getValue()
 }
 
 @Category(Object) class TaxFee {
     def taxFee() {
         value+principal*0.2
-        thisyk
+        this
     }
 }
 
