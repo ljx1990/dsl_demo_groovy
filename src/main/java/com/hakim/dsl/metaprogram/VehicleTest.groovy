@@ -1,22 +1,21 @@
 package com.hakim.dsl.metaprogram
 
 /**
- * Created by lvjxt on 2017/1/7.
- * 灵巧API
+ * Created by lvjxt on 2017/1/7
  */
 interface Vehicle {
     int getPrincipal()
     int getValue();
 }
 
-@Category(Vehicle) class TaxFee {
+@Category(Object) class TaxFee {
     def taxFee() {
         value+principal*0.2
-        this
+        thisyk
     }
 }
 
-@Category(Vehicle) class Comisson {
+@Category(Object) class Comisson {
     def comisson() {
        value - principal*0.2
         this
@@ -37,6 +36,6 @@ class JamesBondVehicle implements Vehicle {
 use ([TaxFee, Comisson]) {
     println( JamesBondVehicle.newInstance(200).with {
         taxFee() comisson() getValue()
-    });
+    })
 }
 
