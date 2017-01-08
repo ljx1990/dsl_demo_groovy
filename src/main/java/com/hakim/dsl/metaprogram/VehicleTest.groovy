@@ -11,13 +11,13 @@ interface Vehicle {
 @Category(Object) class TaxFee {
     def taxFee() {
         value+principal*0.2
-        this
-    }
+this
+}
 }
 
 @Category(Object) class Comisson {
     def comisson() {
-       value - principal*0.2
+        value - principal*0.2
         this
     }
 }

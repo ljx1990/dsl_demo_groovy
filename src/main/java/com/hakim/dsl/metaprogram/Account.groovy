@@ -1,8 +1,6 @@
 class Account{
 
-
     def number,hello
-
 
     def number(number){
         this.number = number;
