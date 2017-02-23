@@ -6,11 +6,11 @@ import static groovyx.net.http.ContentType.TEXT
 import static groovyx.net.http.Method.GET
 
 // initialze a new builder and give a default URL
-def http = new HTTPBuilder( 'http://www.google.com/search' )
+def http = new HTTPBuilder( 'http://activity.test123.com/oper-activity/activity_dync/operate_no_session' )
 when:
 def status
 http.request(GET,TEXT) { req ->
-    uri.path = '/mail/help/tasks/' // overrides any path in the default URL
+  //  uri.path = '/mail/help/tasks/' // overrides any path in the default URL
     headers.'User-Agent' = 'Mozilla/5.0'
 
     response.success = { resp, reader ->
