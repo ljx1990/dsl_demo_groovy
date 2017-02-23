@@ -66,7 +66,7 @@ class StockCategory {
 }
 
 
-@Category(Integer)
+@Category(String)
 class OrderCategory{
     static void buy(Script self,Order o){
         println  "Buy: $o"

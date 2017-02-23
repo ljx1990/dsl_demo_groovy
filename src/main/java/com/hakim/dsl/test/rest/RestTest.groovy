@@ -1,7 +1,9 @@
 package com.hakim.dsl.test.rest
+
 import groovyx.net.http.HTTPBuilder
-import static groovyx.net.http.Method.GET
+
 import static groovyx.net.http.ContentType.TEXT
+import static groovyx.net.http.Method.GET
 
 // initialze a new builder and give a default URL
 def http = new HTTPBuilder( 'http://www.google.com/search' )
@@ -24,5 +26,4 @@ http.request(GET,TEXT) { req ->
         println 'Not found'
     }
 }
-
 then:  200==status
