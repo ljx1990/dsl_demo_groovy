@@ -41,6 +41,13 @@ class RestInfoCatagory{
     static void callrest(Script self, RestWrap o){
         println  "Buy: $o"
     }
+    static void callrest(Script self, Map o){
+        def ok
+        use(RestWrapCategory) {
+          ok =   o.DEFAULT()
+        }
+        println  "Buy: $ok"
+    }
 }
 
 
@@ -54,12 +61,15 @@ class RestWrapCategory {
     static RestWrap GET(Map self) {
         new RestWrap(new RestInfo("GET", self))
     }
+    static RestWrap DEFAULT(Map self) {
+        new RestWrap(new RestInfo(self.type, self))
+    }
 }
 
 
 use(RestInfoCatagory,RestWrapCategory) {
     Map dycPurchase = ["uri":"www.baidu.com","type":"post"]
-    callrest dycPurchase.POST()
+    callrest dycPurchase
 
 }
 
